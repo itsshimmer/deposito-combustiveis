@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DepComb.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DepositoCombustiveis</a> &gt; <a href="index.source.html" class="el_package">com.depositocombustiveis</a> &gt; <span class="el_source">DepComb.java</span></div><h1>DepComb.java</h1><pre class="source lang-java linenums">package com.depositocombustiveis;
+
+/**
+ * DepComb
+ */
+public class DepComb {
+
+<span class="fc" id="L8">    public enum SITUACAO {</span>
+<span class="fc" id="L9">        NORMAL, SOBRAVISO, EMERGENCIA</span>
+    }
+
+<span class="fc" id="L12">    public enum TIPOPOSTO {</span>
+<span class="fc" id="L13">        COMUM, ESTRATEGICO</span>
+    }
+
+    public static final int MAX_ADITIVO = 500;
+    public static final int MAX_ALCOOL = 2500;
+    public static final int MAX_GASOLINA = 10000;
+
+    private SITUACAO situacao;
+    private int gasolina;
+    private int aditivo;
+    private int alcool1;
+    private int alcool2;
+
+<span class="fc" id="L26">    public DepComb(int tAditivo, int tGasolina, int tAlcool1, int tAlcool2) {</span>
+<span class="fc" id="L27">        aditivo = tAditivo;</span>
+<span class="fc" id="L28">        gasolina = tGasolina;</span>
+<span class="fc" id="L29">        alcool1 = tAlcool1;</span>
+<span class="fc" id="L30">        alcool2 = tAlcool2;</span>
+<span class="fc" id="L31">        defineSituacao();</span>
+<span class="fc" id="L32">    }</span>
+
+    private void defineSituacao() {
+<span class="fc bfc" id="L35" title="All 4 branches covered.">        if (gasolina &gt;= (MAX_GASOLINA * 0.5) &amp;&amp; aditivo &gt;= (MAX_ADITIVO * 0.5)</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">                &amp;&amp; (alcool1 + alcool2) &gt;= (MAX_ALCOOL * 0.5)) {</span>
+<span class="fc" id="L37">            situacao = SITUACAO.NORMAL;</span>
+<span class="fc" id="L38">            return;</span>
+        }
+<span class="fc bfc" id="L40" title="All 4 branches covered.">        if (gasolina &gt;= (MAX_GASOLINA * 0.25) &amp;&amp; aditivo &gt;= (MAX_ADITIVO * 0.25)</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">                &amp;&amp; (alcool1 + alcool2) &gt;= (MAX_ALCOOL * 0.25)) {</span>
+<span class="fc" id="L42">            situacao = SITUACAO.SOBRAVISO;</span>
+<span class="fc" id="L43">            return;</span>
+        }
+<span class="fc" id="L45">        situacao = SITUACAO.EMERGENCIA;</span>
+<span class="fc" id="L46">    }</span>
+
+    public SITUACAO getSituacao() {
+<span class="fc" id="L49">        return situacao;</span>
+    }
+
+    public int getGasolina() {
+<span class="fc" id="L53">        return gasolina;</span>
+    }
+
+    public int getAditivo() {
+<span class="fc" id="L57">        return aditivo;</span>
+    }
+
+    public int getAlcool1() {
+<span class="fc" id="L61">        return alcool1;</span>
+    }
+
+    public int getAlcool2() {
+<span class="fc" id="L65">        return alcool2;</span>
+    }
+
+    public int recebeAditivo(int quantidade) {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (quantidade &lt; 0)</span>
+<span class="fc" id="L70">            return -1; // se valor invalido, retorna -1</span>
+
+        // se tanque nao esta lotado
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (aditivo &lt; MAX_ADITIVO) {</span>
+<span class="fc" id="L74">            int diff = MAX_ADITIVO - aditivo;</span>
+            // se valor a ser abastecido é menor que esta vazio no tanque
+<span class="fc bfc" id="L76" title="All 2 branches covered.">            if (quantidade &lt;= diff) {</span>
+                // abastece o solicitado e retorna
+<span class="fc" id="L78">                aditivo = aditivo + quantidade;</span>
+<span class="fc" id="L79">                return quantidade;</span>
+            }
+            // abastece o maximo possivel, e retorna
+<span class="fc" id="L82">            aditivo = MAX_ADITIVO;</span>
+<span class="fc" id="L83">            return diff;</span>
+        }
+<span class="fc" id="L85">        return 0; // se tanque esta lotado retorna 0</span>
+    }
+
+    public int recebeGasolina(int quantidade) {
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if (quantidade &lt; 0)</span>
+<span class="fc" id="L90">            return -1; // se valor invalido, retorna -1</span>
+
+        // se tanque nao esta lotado
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        if (gasolina &lt; MAX_GASOLINA) {</span>
+<span class="fc" id="L94">            int diff = MAX_GASOLINA - gasolina;</span>
+            // se valor a ser abastecido é menor que esta vazio no tanque
+<span class="fc bfc" id="L96" title="All 2 branches covered.">            if (quantidade &lt;= diff) {</span>
+                // abastece o solicitado e retorna
+<span class="fc" id="L98">                gasolina = gasolina + quantidade;</span>
+<span class="fc" id="L99">                return quantidade;</span>
+            }
+            // abastece o maximo possivel, e retorna
+<span class="fc" id="L102">            gasolina = MAX_GASOLINA;</span>
+<span class="fc" id="L103">            return diff;</span>
+        }
+<span class="fc" id="L105">        return 0; // se tanque esta lotado retorna 0</span>
+    }
+
+    public int recebeAlcool(int quantidade) {
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        if (quantidade &lt; 0)</span>
+<span class="fc" id="L110">            return -1; // se valor invalido, retorna -1</span>
+
+<span class="fc" id="L112">        int totalAlcool = alcool1 + alcool2;</span>
+
+        // se tanque nao esta lotado
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">        if (totalAlcool &lt; MAX_ALCOOL) {</span>
+<span class="fc" id="L116">            int diff = MAX_ALCOOL - totalAlcool;</span>
+            // se valor a ser abastecido é menor que esta vazio no tanque
+<span class="fc bfc" id="L118" title="All 2 branches covered.">            if (quantidade &lt;= diff) {</span>
+                // abastece o solicitado e retorna
+<span class="fc" id="L120">                alcool1 = alcool1 + (quantidade / 2);</span>
+<span class="fc" id="L121">                alcool2 = alcool2 + (quantidade / 2);</span>
+<span class="fc" id="L122">                return quantidade;</span>
+            }
+            // abastece o maximo possivel, e retorna
+<span class="fc" id="L125">            alcool1 = MAX_ALCOOL / 2;</span>
+<span class="fc" id="L126">            alcool2 = MAX_ALCOOL / 2;</span>
+<span class="fc" id="L127">            return diff;</span>
+        }
+<span class="nc" id="L129">        return 0; // se tanque esta lotado retorna 0</span>
+    }
+
+    private int[] efetuarEntrega(int gasolinaNecessaria, int alcoolNecessario, int aditivoNecessario) {
+<span class="fc" id="L133">        int[] resultado = new int[4];</span>
+<span class="fc" id="L134">        resultado[0] = -21;</span>
+<span class="pc bpc" id="L135" title="3 of 6 branches missed.">        if (gasolinaNecessaria &lt;= gasolina &amp;&amp; alcoolNecessario &lt;= (alcool1 + alcool2) &amp;&amp; aditivoNecessario &lt;= aditivo) {</span>
+<span class="fc" id="L136">            gasolina = gasolina - gasolinaNecessaria;</span>
+<span class="fc" id="L137">            alcool1 = alcool1 - alcoolNecessario / 2;</span>
+<span class="fc" id="L138">            alcool2 = alcool2 - alcoolNecessario / 2;</span>
+<span class="fc" id="L139">            aditivo = aditivo - aditivoNecessario;</span>
+<span class="fc" id="L140">            resultado[0] = aditivo;</span>
+<span class="fc" id="L141">            resultado[1] = gasolina;</span>
+<span class="fc" id="L142">            resultado[2] = alcool1;</span>
+<span class="fc" id="L143">            resultado[3] = alcool2;</span>
+        }
+<span class="fc" id="L145">        return resultado;</span>
+    }
+
+    public int[] encomendaCombustivel(int quantidade, TIPOPOSTO tipoPosto) {
+<span class="fc" id="L149">        int[] resultado = new int[4];</span>
+        // se invalido, retorna -7 no primeiro valor
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        if (quantidade &lt; 0) {</span>
+<span class="fc" id="L152">            resultado[0] = -7;</span>
+<span class="fc" id="L153">            return resultado;</span>
+        }
+        // 5% de aditivo, 25% de álcool e 70% de gasolina pura AdAlGa
+<span class="fc" id="L156">        int gasolinaNecessaria = (int) ((quantidade * 100) * 0.7) / 100;</span>
+<span class="fc" id="L157">        int alcoolNecessario = (int) ((quantidade * 100) * 0.25) / 100;</span>
+<span class="fc" id="L158">        int aditivoNecessario = (int) ((quantidade * 100) * 0.05) / 100;</span>
+
+<span class="pc bpc" id="L160" title="1 of 4 branches missed.">        switch (situacao) {</span>
+        case NORMAL:
+            // se a situacao é normal, atendemos todos os postos, por isso nao testamos
+<span class="fc" id="L163">            return efetuarEntrega(gasolinaNecessaria, alcoolNecessario, aditivoNecessario);</span>
+
+        case SOBRAVISO:
+<span class="pc bpc" id="L166" title="1 of 3 branches missed.">            switch (tipoPosto) {</span>
+            case COMUM:
+<span class="fc" id="L168">                gasolinaNecessaria = gasolinaNecessaria / 2;</span>
+<span class="fc" id="L169">                alcoolNecessario = alcoolNecessario / 2;</span>
+<span class="fc" id="L170">                aditivoNecessario = aditivoNecessario / 2;</span>
+<span class="fc" id="L171">                return efetuarEntrega(gasolinaNecessaria, alcoolNecessario, aditivoNecessario);</span>
+
+            case ESTRATEGICO:
+<span class="fc" id="L174">                return efetuarEntrega(gasolinaNecessaria, alcoolNecessario, aditivoNecessario);</span>
+<span class="fc" id="L175">            }</span>
+
+        case EMERGENCIA:
+<span class="pc bpc" id="L178" title="1 of 3 branches missed.">            switch (tipoPosto) {</span>
+            case COMUM:
+<span class="fc" id="L180">                resultado[0] = -14;</span>
+<span class="fc" id="L181">                return resultado;</span>
+
+            case ESTRATEGICO:
+<span class="pc bpc" id="L184" title="1 of 4 branches missed.">                if (gasolinaNecessaria &lt;= gasolina &amp;&amp; alcoolNecessario &lt;= (alcool1 + alcool2)</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">                        &amp;&amp; aditivoNecessario &lt;= aditivo) {</span>
+<span class="fc" id="L186">                    gasolina = gasolina - gasolinaNecessaria;</span>
+<span class="fc" id="L187">                    alcool1 = alcool1 - alcoolNecessario / 2;</span>
+<span class="fc" id="L188">                    alcool2 = alcool2 - alcoolNecessario / 2;</span>
+<span class="fc" id="L189">                    aditivo = aditivo - aditivoNecessario;</span>
+<span class="fc" id="L190">                    resultado[0] = aditivo;</span>
+<span class="fc" id="L191">                    resultado[1] = gasolina;</span>
+<span class="fc" id="L192">                    resultado[2] = alcool1;</span>
+<span class="fc" id="L193">                    resultado[3] = alcool2;</span>
+<span class="fc" id="L194">                    return resultado;</span>
+                }
+
+<span class="pc bpc" id="L197" title="1 of 4 branches missed.">                if (gasolinaNecessaria &lt;= gasolina &amp;&amp; alcoolNecessario &lt;= (alcool1 + alcool2)) {</span>
+<span class="fc" id="L198">                    gasolina = gasolina - gasolinaNecessaria;</span>
+<span class="fc" id="L199">                    alcool1 = alcool1 - alcoolNecessario / 2;</span>
+<span class="fc" id="L200">                    alcool2 = alcool2 - alcoolNecessario / 2;</span>
+<span class="fc" id="L201">                    resultado[0] = aditivo;</span>
+<span class="fc" id="L202">                    resultado[1] = gasolina;</span>
+<span class="fc" id="L203">                    resultado[2] = alcool1;</span>
+<span class="fc" id="L204">                    resultado[3] = alcool2;</span>
+<span class="fc" id="L205">                    return resultado;</span>
+                }
+
+<span class="fc" id="L208">                resultado[0] = -21;</span>
+<span class="fc" id="L209">                return resultado;</span>
+            }
+
+        }
+<span class="nc" id="L213">        resultado[0] = 99; // erro acabou o sonho</span>
+<span class="nc" id="L214">        return resultado; // return obrigatorio do java</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

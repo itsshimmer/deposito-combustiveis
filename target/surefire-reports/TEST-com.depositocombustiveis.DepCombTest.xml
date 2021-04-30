@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.depositocombustiveis.DepCombTest" time="0.514" tests="37" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.runtime.version" value="15.0.2+7-27"/>
+    <property name="java.class.path" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/test-classes:/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/classes:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar:/root/.m2/repository/org/mockito/mockito-core/3.5.13/mockito-core-3.5.13.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.10.15/byte-buddy-1.10.15.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.15/byte-buddy-agent-1.10.15.jar:/root/.m2/repository/org/objenesis/objenesis/3.1/objenesis-3.1.jar:"/>
+    <property name="user.name" value="root"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="path.separator" value=":"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="os.version" value="5.10.25-linuxkit"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="sun.boot.library.path" value="/usr/local/openjdk-15/lib"/>
+    <property name="sun.java.command" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/surefire/surefirebooter12790579934626295085.jar /workspaces/VERIVAL-PAS/DepositoCombustiveis/target/surefire 2021-04-30T04-51-30_722-jvmRun1 surefire9214907346049088365tmp surefire_05359866093858239439tmp"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/test-classes:/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/classes:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar:/root/.m2/repository/org/mockito/mockito-core/3.5.13/mockito-core-3.5.13.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.10.15/byte-buddy-1.10.15.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.10.15/byte-buddy-agent-1.10.15.jar:/root/.m2/repository/org/objenesis/objenesis/3.1/objenesis-3.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.dir" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.home" value="/usr/local/openjdk-15"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15.0.2+7-27"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+    <property name="surefire.real.class.path" value="/workspaces/VERIVAL-PAS/DepositoCombustiveis/target/surefire/surefirebooter12790579934626295085.jar"/>
+  </properties>
+  <testcase name="DepComb(int, int, int, int, String)[1]" classname="com.depositocombustiveis.DepCombTest" time="0.148"/>
+  <testcase name="DepComb(int, int, int, int, String)[2]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="DepComb(int, int, int, int, String)[3]" classname="com.depositocombustiveis.DepCombTest" time="0.003"/>
+  <testcase name="DepComb(int, int, int, int, String)[4]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="DepComb(int, int, int, int, String)[5]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="DepComb(int, int, int, int, String)[6]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="recebeGasolina(int, int, int, int)[1]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="recebeGasolina(int, int, int, int)[2]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeGasolina(int, int, int, int)[3]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeGasolina(int, int, int, int)[4]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeGasolina(int, int, int, int)[5]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeGasolina(int, int, int, int)[6]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="recebeGasolina(int, int, int, int)[7]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="recebeGasolina(int, int, int, int)[8]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAditivo(int, int, int, int)[1]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAditivo(int, int, int, int)[2]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAditivo(int, int, int, int)[3]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAditivo(int, int, int, int)[4]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAditivo(int, int, int, int)[5]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="recebeAditivo(int, int, int, int)[6]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[1]" classname="com.depositocombustiveis.DepCombTest" time="0.009"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[2]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[3]" classname="com.depositocombustiveis.DepCombTest" time="0.003"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[4]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[5]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[6]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[7]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[8]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[9]" classname="com.depositocombustiveis.DepCombTest" time="0.002"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[10]" classname="com.depositocombustiveis.DepCombTest" time="0.003"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[11]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="encomendaCombustivel(int, int, int, int, int, String, int, int, int, int)[12]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAlcool(int, int, int, int, int)[1]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAlcool(int, int, int, int, int)[2]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAlcool(int, int, int, int, int)[3]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAlcool(int, int, int, int, int)[4]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+  <testcase name="recebeAlcool(int, int, int, int, int)[5]" classname="com.depositocombustiveis.DepCombTest" time="0.001"/>
+</testsuite>
